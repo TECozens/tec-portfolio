@@ -1,28 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import About from './components/Pages/About';
+import Contact from './components/Pages/Contact';
+import Home from './components/Pages/Home';
 import { ChakraProvider } from '@chakra-ui/react';
-import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import About from './Components/Pages/About';
-import Contact from './Components/Pages/Contact';
 
 function App() {
   return (
     <ChakraProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <div className="App">
-              <header className="App-header">
-                Main Page
-              </header>
-            </div>
-          } />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
+        <Router>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </Router>
     </ChakraProvider>
   );
 }
