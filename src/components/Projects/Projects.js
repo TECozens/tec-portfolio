@@ -20,13 +20,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <Box p={2}>
-        <Wrap>
-                {projects.map((project) => (
-                    <Project key={project.id} project={project} />
-                ))}
-        </Wrap>
-    </Box>
+    <SimpleGrid minChildWidth='40%' spacing='40px'>
+            {projects.map((project) => (
+                <Project key={project.id} project={project} />
+            ))}
+    </SimpleGrid>
   );
 };
 

@@ -3,12 +3,14 @@ import Navbar from './components/Navbar/Navbar';
 import About from './components/Pages/About';
 import Contact from './components/Pages/Contact';
 import Home from './components/Pages/Home';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider} from '@chakra-ui/react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import theme from './styles/theme';
+
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
         <Router>
             <Navbar/>
             <Routes>
