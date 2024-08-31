@@ -21,6 +21,18 @@ const config = {
   initialColorMode: 'system', // Set the default to light mode
   useSystemColorMode: true,  // Disable system color preference detection
 };
-const theme = extendTheme({ colors, fonts, config });
+
+const theme = extendTheme({ 
+  colors, 
+  fonts, 
+  config, 
+      styles: {
+          global: (props) => ({
+            body: {
+              bg: props.colorMode === 'dark' ? 'gray' : 'gray.200'
+            }
+          })
+      }
+  });
 
 export default theme;

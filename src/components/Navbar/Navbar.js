@@ -23,8 +23,8 @@ const Navbar = () => {
           <Link as={RouterLink} to="/" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
             Home
           </Link>
-          <Link as={RouterLink} to="/about" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
-            About
+          <Link as={RouterLink} to="/resume" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
+            Resume
           </Link>
           <Link as={RouterLink} to="/contact" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
             Contact

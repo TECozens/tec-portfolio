@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import About from './components/Pages/About';
+import Resume from './components/Pages/Resume';
 import Contact from './components/Pages/Contact';
 import Home from './components/Pages/Home';
 import { ChakraProvider} from '@chakra-ui/react';
@@ -15,7 +15,7 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/about" element={<About />} />
+                <Route path="/resume" element={<Resume />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
         </Router>
