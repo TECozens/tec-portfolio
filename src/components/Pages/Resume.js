@@ -13,9 +13,8 @@ const Resume = () => {
                 <Text fontSize="lg">Machine Learning & AI (AI/ML) Student at the University of South Wales</Text>
                 <ResumeMenu onSelect={setSelectedView} />
             </Box>
-      <Box flex="2">
-                {/* SwitchView based on selected view */}
-                <SwitchView view={selectedView} />
+      <Box flex="2" p='3'>
+        <SwitchView view={selectedView}/>
       </Box>
     </Box>
   );

@@ -1,17 +1,16 @@
 import React from 'react';
-import { Box, Button, VStack } from '@chakra-ui/react';
+import { Box, Button, Stack, Divider } from '@chakra-ui/react';
 
 const ResumeMenu = ({ onSelect }) => {
     const menuItems = ['Experience', 'Education', 'Skills', 'About Me'];
     
     return (
-        <VStack spacing={4}>
+        <Stack spacing={4}>
+            <Divider/>
             {menuItems.map((item, index) => (
-                <Box key={index} w="100%" textAlign="center">
-                    <Button variant="ghost" onClick={() => onSelect(item)}>{item}</Button>
-                </Box>
+                <Button align="center" key={index}  onClick={() => onSelect(item)}>{item}</Button>
             ))}
-        </VStack>
+        </Stack>
     );
 };
 

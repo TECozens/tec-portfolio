@@ -4,17 +4,24 @@ import Education from './Education';
 import Skills from './Skills';
 import About from './About';
 
-
 const SwitchView = ({ view }) => {
     switch (view) {
         case 'Experience':
-            return <Experience/>;
+            return (
+                <Experience/>
+            );
         case 'Education':
-            return <Education/>;
+            return (
+                <Education/>
+            );
         case 'Skills':
-            return <Skills/>;
+            return (
+                <Skills/>
+            );
         case 'About Me':
-            return <About/>;
+            return (
+                <About/>
+            );
         default:
             return ;
     }

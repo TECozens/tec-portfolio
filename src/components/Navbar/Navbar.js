@@ -1,36 +1,38 @@
-import { Box, Flex, Link, Button, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Icon, Button, useColorMode, useColorModeValue, Heading, Image, ButtonGroup } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import './Navbar.css';
 import theme from '../../styles/theme'; // Ensure this path is correct
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'; // Import the appropriate icons from Chakra UI or wherever they are defined
 
 const Navbar = () => {
   const { toggleColorMode } = useColorMode();
-  const bg = useColorModeValue(theme.colors.brand.lightGray, theme.colors.brand.darkGray);
+  const bg = useColorModeValue(theme.colors.brand.primaryLight, theme.colors.brand.darkGray);
   const color = useColorModeValue('black', 'white');
-  const primaryText = useColorModeValue(theme.colors.brand.primaryLight, theme.colors.brand.primaryDark);
-  const secondaryText = useColorModeValue(theme.colors.brand.secondaryLight, theme.colors.brand.secondaryDark);
+  const orange = theme.colors.brand.orange;
 
   return (
     <Box bg={bg} px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <Box>
-          <div className="logo-container">
-            <img src="/images/coolimage.gif" alt="Cool" className="rounded-image" />
-          </div>
+          <Box className="logo-container">
+            <Image src="/images/coolimage.gif" alt="Cool" className="rounded-image" />
+          </Box>
         </Box>
         <Flex alignItems={'center'} ml={4}>
-          <h1 style={{ marginRight: '20px', color: primaryText }}>TECozens</h1>
-          <Link as={RouterLink} to="/" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
-            Home
-          </Link>
-          <Link as={RouterLink} to="/resume" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
-            Resume
-          </Link>
-          <Link as={RouterLink} to="/contact" px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color: secondaryText }}>
-            Contact
-          </Link>
+          <Heading style={{ marginRight: '20px', color: orange }}>TECozens</Heading>
+          <ButtonGroup>
+              <Button as={RouterLink} to="/" rounded={'md'} variant='outline' border='1px' borderColor={orange} _hover={{bg: useColorModeValue('gray.200', 'gray.700') }} style={{color}}>
+                Home
+              </Button>
+              <Button as={RouterLink} to="/resume" rounded={'md'} variant='outline'  border='1px' borderColor={orange} _hover={{bg: useColorModeValue('gray.200', 'gray.700') }} style={{color}}>
+                Resume
+              </Button>
+              <Button as={RouterLink} to="/contact" rounded={'md'} variant='outline' border='1px' borderColor={orange} _hover={{bg: useColorModeValue('gray.200', 'gray.700') }} style={{ color }}>
+                Contact
+              </Button>
+          </ButtonGroup>
           <Button onClick={toggleColorMode} ml={4}>
-            Toggle {useColorModeValue('Dark', 'Light')}
+            <Icon as={useColorModeValue(SunIcon, MoonIcon)} /> 
           </Button>
         </Flex>
       </Flex>
