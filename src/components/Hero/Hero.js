@@ -21,7 +21,7 @@ const Hero = () => {
   const texts = [
     "Machine Learning & AI Student passionate about creating innovative solutions",
     "Exploring the intersection of artificial intelligence and software development",
-    "Thankyou for visiting my portfolio, this is a work in progress and I will be updating it with new projects so keep an eye out and feel free to reach out to me!"
+    "Thank you for visiting my portfolio, this is a work in progress and I will be updating it with new projects so keep an eye out and feel free to reach out to me!"
   ];
 
   return (
