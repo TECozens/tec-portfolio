@@ -35,10 +35,17 @@ const Navbar = () => {
   );
 
   useEffect(() => {
-    if (isMobile) {
-      setIsExpanded(false);
-    }
-  }, [isMobile]);
+    const handleResize = () => {
+      if (window.innerWidth >= 480) {
+        setIsExpanded(true);
+      } else {
+        setIsExpanded(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setIsExpanded]);
 
   const bg = useColorModeValue(
     theme.colors.brand.background, 
