@@ -8,3 +8,25 @@ html, body {
 #root {
   height: 100%;
 }
+
+/* Add these rules */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, 
+textarea, 
+button {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}

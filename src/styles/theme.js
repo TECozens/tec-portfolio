@@ -4,16 +4,21 @@ const colors = {
   brand: {
     primary: '#FF6B00',     // Half-Life orange
     // Light mode colors
-    background: '#FFFFFF',   // Clean white background
-    secondary: '#EBEBEB',   // Light gray
-    tertiary: '#D1D1D1',    // Medium gray for hover states
+    background: '#E2E2E2',   // Darker gray background
+    secondary: '#FFFFFF',    // White for cards
+    tertiary: '#D1D1D1',    // Darker gray for hover states
     text: '#1A1A1A',        // Nearly black for text
+    accent: '#FFE5D4',      // Light orange accent
+    cardBg: '#FFFFFF',      // White for card backgrounds
+    
     // Dark mode colors
-    backgroundDark: '#0D0D0D', // Nearly black background
-    secondaryDark: '#1A1A1A',  // Dark gray
-    tertiaryDark: '#2E2E2E',   // Medium gray for hover
-    cardDark: '#1A1A1A',       // Card background in dark mode
-    textDark: '#EBEBEB',       // Light gray text for dark mode
+    backgroundDark: '#121212', // Dark background
+    secondaryDark: '#1E1E1E',  // Darker gray for cards
+    tertiaryDark: '#2A2A2A',   // Medium gray for hover states
+    cardDark: '#242424',       // Card background in dark mode
+    textDark: '#F5F5F5',       // Off-white for better readability
+    accentDark: '#2E1500',     // Dark orange accent
+    navbarDark: '#1A1A1A'      // Navbar background in dark mode
   }
 };
 

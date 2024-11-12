@@ -5,8 +5,8 @@ import { useColorModeValue } from '@chakra-ui/color-mode';
 import theme from '../../../styles/theme';
 
 const Project = ({ project }) => {
-  const bg = useColorModeValue(theme.colors.brand.background, theme.colors.brand.cardDark);
-  const hoverBg = useColorModeValue(theme.colors.brand.tertiary, theme.colors.brand.tertiaryDark);
+  const bg = useColorModeValue('#FFFFFF', '#2A2A2A');
+  const hoverBg = useColorModeValue('#F8F8F8', '#323232');
   const textColor = useColorModeValue(theme.colors.brand.text, theme.colors.brand.textDark);
 
   return (
@@ -21,6 +21,8 @@ const Project = ({ project }) => {
             boxShadow: 'xl'
           }} 
           transition="all 0.2s ease-in-out"
+          borderWidth="1px"
+          borderColor={useColorModeValue('gray.200', 'gray.700')}
         >
           <CardHeader>
             <Heading size='md' color={theme.colors.brand.primary}>{project.name}</Heading>

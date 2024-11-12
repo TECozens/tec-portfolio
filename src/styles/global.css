@@ -1,0 +1,58 @@
+/* Combine App.css and index.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+input, 
+textarea, 
+button {
+  font-size: 16px;
+} 
+
+/* Add these touch-specific styles */
+@media (hover: none) {
+  .nav-touch-area {
+    position: fixed;
+    width: 20px;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+  .nav-handle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 40px;
+    background-color: var(--chakra-colors-brand-primary);
+    border-radius: 0 4px 4px 0;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-handle:active {
+    opacity: 1;
+  }
+} 

@@ -1,93 +1,93 @@
 import React from 'react';
 import { 
   Box, 
-  Heading, 
-  Button, 
+  Container, 
+  Flex, 
   VStack, 
   useColorModeValue,
-  Image,
-  Container,
-  Flex,
-  Stack,
-  keyframes,
-  Text,
+  Image
 } from '@chakra-ui/react';
-import TypewriterText from '../common/TypewriterText';
+import { NameStack } from './NameStack';
+import { TypewriterText } from '../common/TypewriterText';
+import { ActionButton } from '../common/ActionButton';
+import { DownloadButton } from '../common/DownloadButton';
 import theme from '../../styles/theme';
-import { Link as RouterLink } from 'react-router-dom';
-
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
 
 const Hero = () => {
-  const textColor = useColorModeValue(theme.colors.brand.text, theme.colors.brand.textDark);
   const bg = useColorModeValue(theme.colors.brand.background, theme.colors.brand.backgroundDark);
-  const animation = `${fadeIn} 1s ease-out`;
-  
+  const cardBg = useColorModeValue(theme.colors.brand.secondary, theme.colors.brand.cardDark);
+  const accentBg = useColorModeValue(theme.colors.brand.accent, theme.colors.brand.accentDark);
+
+  const texts = [
+    "Machine Learning & AI Student passionate about creating innovative solutions",
+    "Exploring the intersection of artificial intelligence and software development",
+    "Thankyou for visiting my portfolio, this is a work in progress and I will be updating it with new projects so keep an eye out and feel free to reach out to me!"
+  ];
+
   return (
-    <Box bg={bg} minH="100vh" py={20}>
+    <Box 
+      bg={bg} 
+      minH="100vh" 
+      py={10}
+      px={{ base: 4, md: 10 }}
+    >
       <Container maxW="container.xl">
-        <Flex direction={{ base: 'column', md: 'row' }} align="center" justify="space-between" gap={8}>
-          <VStack align="flex-start" spacing={8} flex={1}>
-            <Stack spacing={0} animation={animation}>
-              <Heading size="2xl">
-                <Text as="span" color={theme.colors.brand.primary}>T</Text>omas
-              </Heading>
-              <Heading size="2xl">
-                <Text as="span" color={theme.colors.brand.primary}>E</Text>wan
-              </Heading>
-              <Heading size="2xl">
-                <Text as="span" color={theme.colors.brand.primary}>C</Text>ozens
-              </Heading>
-            </Stack>
-            
-            <VStack align="flex-start" spacing={4}>
-              <TypewriterText 
-                text="Machine Learning & AI Student passionate about creating innovative solutions"
-                color={textColor}
-                delay={30}
-              />
-              <TypewriterText 
-                text="Exploring the intersection of artificial intelligence and software development"
-                color={textColor}
-                delay={30}
-              />
-              <Button 
-                as={RouterLink}
-                to="/repositories"
-                colorScheme="orange"
-                size="lg"
-                _hover={{ transform: 'translateY(-2px)' }}
-                transition="all 0.2s"
-                opacity="0"
-                animation={`${fadeIn} 1s ease-out 3s forwards`}
-              >
-                View My Work
-              </Button>
-            </VStack>
-          </VStack>
-          
+        <Flex 
+          direction={{ base: 'column', lg: 'row' }} 
+          align="center" 
+          justify="space-between"
+          gap={8}
+          mt={{ base: 16, md: 0 }}
+        >
           <Box 
             flex={1} 
-            position="relative"
-            animation={animation}
+            bg={cardBg}
+            p={{ base: 6, md: 8 }}
+            borderRadius="xl"
+            boxShadow="xl"
+            borderLeft="4px"
+            borderColor={theme.colors.brand.primary}
+            w="100%"
           >
-            <Image 
-              src="/images/hero.jpg"
-              alt="Hero Image"
+            <VStack align="flex-start" spacing={8}>
+              <NameStack />
+              <TypewriterText texts={texts} />
+              <Flex 
+                gap={4} 
+                direction={{ base: 'column', sm: 'row' }}
+                w={{ base: '100%', sm: 'auto' }}
+              >
+                <ActionButton />
+                <DownloadButton />
+              </Flex>
+            </VStack>
+          </Box>
+
+          <Box 
+            position="relative"
+            flex={1}
+            maxW={{ base: "250px", lg: "400px" }}
+            mt={{ base: 8, lg: 0 }}
+          >
+            <Box
+              position="absolute"
+              inset="-4"
+              bg={accentBg}
               borderRadius="full"
-              boxSize={{ base: "300px", md: "400px" }}
-              objectFit="cover"
-              border="3px solid"
+              filter="blur(40px)"
+              opacity="0.6"
+              zIndex={0}
+            />
+            <Image
+              src="/images/profile.jpg"
+              alt="Profile"
+              borderRadius="full"
+              border="4px solid"
               borderColor={theme.colors.brand.primary}
-              mx="auto"
-              _hover={{
-                transform: "scale(1.02)",
-                transition: "transform 0.3s ease-in-out",
-              }}
-              transition="all 0.3s ease-in-out"
+              position="relative"
+              zIndex={1}
+              transition="transform 0.3s ease"
+              _hover={{ transform: 'scale(1.02)' }}
             />
           </Box>
         </Flex>

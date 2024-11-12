@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Project from './Project/Project';
-import {Wrap, Box, SimpleGrid} from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -20,10 +20,14 @@ const Projects = () => {
   }, []);
 
   return (
-    <SimpleGrid minChildWidth='40%' spacing='40px'>
-            {projects.map((project) => (
-                <Project key={project.id} project={project} />
-            ))}
+    <SimpleGrid 
+      columns={{ base: 1, md: 2, lg: 3 }}
+      spacing={{ base: 4, md: 6 }}
+      w="100%"
+    >
+      {projects.map((project) => (
+        <Project key={project.id} project={project} />
+      ))}
     </SimpleGrid>
   );
 };
