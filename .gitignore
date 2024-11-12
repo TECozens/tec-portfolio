@@ -54,3 +54,7 @@ dist/
 tmp/
 temp/
 out/
+
+# Make sure these are NOT in .gitignore:
+!/public
+package-lock.json
